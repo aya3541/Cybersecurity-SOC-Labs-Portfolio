@@ -119,7 +119,6 @@ Used RITA filters to identify hosts with high **Beacon Likelihood**.
 * **Focus:** Network hardening, threat intelligence integration, and automated response.
 
 ---
-
-[Back to Main Writeups](../README.md)
+[⬅️ Back to Writeups](./README.md)
 
 

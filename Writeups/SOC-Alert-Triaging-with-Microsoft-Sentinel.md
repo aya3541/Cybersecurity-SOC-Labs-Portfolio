@@ -1,61 +1,98 @@
-### Case Study: Investigating Linux Privilege Escalation via Microsoft Sentinel
 
-# 1. Executive Summary
-This report details the systematic investigation of high-severity incidents detected within the Azure environment of 'The Best Festival Company'. The investigation focused on identifying a series of malicious activities mapped to the Privilege Escalation tactic, 
-specifically involving unauthorized kernel module insertion and privilege escalation through improper sudoers modifications.
+# Case Study: Investigating Linux Privilege Escalation via Microsoft Sentinel
 
-# 2. Incident Context
-Platform: Microsoft Sentinel (SIEM/SOAR)
+## 1. Executive Summary
 
-Incident Name: Linux PrivEsc - Kernel Module Insertion
+This report details the systematic investigation of high-severity incidents detected within the Azure environment of 'The Best Festival Company'. The investigation focused on identifying a series of malicious activities involving unauthorized kernel module insertion and privilege escalation through improper sudoers modifications.
 
-Tactics (MITRE ATT&CK): Initial Access (T1078), Privilege Escalation (T1068), Persistence (T1547.006)
+* **Attack Vector:** Unauthorized SSH access followed by exploitation of local configuration weaknesses.
+* **Impact:** Root-level compromise allowing persistent access and sensitive data exfiltration (Credential Harvesting).
 
-# 3. Attack Timeline (Reconstructed)
-To demonstrate the progression of the breach, the following timeline was reconstructed from logs:
+---
 
-10:02 UTC: Successful SSH login from unauthorized external IP (10.10.155.20).
+## 2. Incident Context
 
-10:04 UTC: Privilege escalation activity detected (unauthorized sudoers modification).
+* **Platform:** Microsoft Sentinel (SIEM/SOAR)
+* **Incident Name:** `Linux PrivEsc - Kernel Module Insertion`
+* **Affected Asset:** `app-02` (Linux Web Server)
+* **Verdict:** **True Positive (TP)**
 
-10:06 UTC: Execution of sensitive file backup (/etc/shadow) indicating credential harvesting.
+**Tactics (MITRE ATT&CK):**
 
-10:09 UTC: Deployment and insertion of malicious kernel module (malicious_mod.ko).
+| Tactic | Technique |
+| --- | --- |
+| **Initial Access** | Valid Accounts (T1078) |
+| **Privilege Escalation** | Exploitation for Privilege Escalation (T1068) |
+| **Persistence** | Kernel Modules and Extensions (T1547.006) |
 
-# 4. Technical Investigation & Log Analysis
-Phase 1: Evidence Collection via KQL
-A deep-dive analysis was conducted using KQL on the Syslog_CL table to validate the suspicious activity on app-02.
+---
 
-## KQL Query Executed:
+## 3. Attack Timeline (Reconstructed)
+
+| Time (UTC) | Action |
+| --- | --- |
+| **10:02** | Successful SSH login from unauthorized external IP (`10.10.155.20`) |
+| **10:04** | Unauthorized `sudoers` modification detected |
+| **10:06** | Access to sensitive file backup (`/etc/shadow`) - Credential Harvesting |
+| **10:09** | Insertion of malicious kernel module (`malicious_mod.ko`) |
+
+---
+
+## 4. Technical Investigation & Log Analysis
+
+### Phase 1: Evidence Collection via KQL
+
+A deep-dive analysis was conducted using KQL on the `Syslog_CL` table to validate the suspicious activity on the affected host.
+
+**KQL Query Executed:**
+
+```kusto
 Syslog_CL
 | where host_s == 'app-02'
 | project _timestamp_t, host_s, Message
 | order by _timestamp_t asc
-Phase 2: False Positive (FP) Consideration
-Before escalation, a False Positive review was conducted:
 
-Maintenance Window: No approved maintenance or updates were scheduled for this period.
+```
 
-Entity Verification: The source IP (10.10.155.20) does not belong to any authorized administrative range.
+### Phase 2: False Positive (FP) Consideration
 
-Verdict: Confirmed True Positive (TP) based on the sequence of unauthorized system-level changes.
+Before final escalation, a rigorous False Positive review was conducted:
 
-# 5. Analysis and Impact
-The attacker successfully bypassed initial controls to obtain root-level access. Impact: Full compromise of the host allowed the attacker to survive reboots (Persistence) and potentially pivot to other cloud assets or exfiltrate sensitive credential hashes from the shadow file.
+1. **Maintenance Window:** No approved maintenance or updates were scheduled for this period.
+2. **Entity Verification:** The source IP (`10.10.155.20`) was confirmed to be outside the authorized administrative range.
+3. **Command Intent:** The combination of `shadow` file access and `kernel module` insertion is inconsistent with standard administrative workflows.
 
-# 6. Mitigation and Strategic Recommendations
-Immediate Response & SOAR Concept
-Host Isolation: Isolated app-02 from the network to prevent lateral movement.
+---
 
-Identity Cleanup: Revoked active sessions and removed the unauthorized user 'Alice'.
+## 5. Analysis and Impact
 
-Artifact Removal: Purged the malicious_mod.ko from the file system.
+* **Attack Chain:** The attacker bypassed initial controls to obtain root-level access, followed by establishing persistence through a malicious kernel module to survive reboots.
+* **Impact:** **High** — Full compromise of the host and potential lateral movement to other cloud assets.
 
-Long-term Hardening & Detection Logic
-Detection Logic: Implement alerts specifically for "Kernel Module Insertion" and "Unauthorized Sudoers modification" using Sentinel Analytic Rules.
+**CIA Impact:**
 
-Zero Trust: Enforce Phishing-resistant MFA (FIDO2) and Just-In-Time (JIT) access for all SSH management.
+| Property | Impact |
+| --- | --- |
+| **Confidentiality** | **High** - Sensitive credential hashes (`/etc/shadow`) were accessed |
+| **Integrity** | **High** - Unauthorized system configuration and kernel-level changes |
+| **Availability** | **Medium** - Risk of system instability due to unauthorized kernel modules |
 
-Assumptions & Limitations: Investigation relied on Sentinel-ingested Syslog data; packet-level evidence was not available during this phase.
+---
 
-Back to Main Writeups
+## 6. Mitigation & Strategic Recommendations
+
+### Immediate Response (SOAR Concept)
+
+* **Host Isolation:** Automatically isolated `app-02` from the network to prevent lateral movement.
+* **Identity Cleanup:** Revoked active sessions and removed the unauthorized user `Alice`.
+* **Artifact Removal:** Purged `malicious_mod.ko` and restored original `sudoers` configuration.
+
+### Long-term Hardening
+
+* **Detection Logic:** Deploy Sentinel Analytic Rules specifically for "Kernel Module Insertion" and "Unauthorized Sudoers modification".
+* **Zero Trust:** Enforce phishing-resistant MFA (FIDO2) and Just-In-Time (JIT) access for all SSH management.
+* **Immutable Logs:** Ensure logs are forwarded to a hardened, central repository to prevent attacker tampering.
+
+---
+
+[Back to Main Writeups](https://www.google.com/search?q=../Writeups/README.md)

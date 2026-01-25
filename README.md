@@ -48,9 +48,10 @@ Junior Cybersecurity Analyst – Cisco Networking Academy (2025).
 Microsoft Summer Camp 2025 – Cybersecurity Track.
 
 
-# Connect with me: LinkedIn | Email: ayahossne41@gmail.com
+# Connect with me: 
+
+LinkedIn : www.linkedin.com/in/aya-hossny
+
+Email: ayahossne41@gmail.com
 
 
-Microsoft Summer Camp 2025 – Cybersecurity Track.
-
-📫 Connect with me: LinkedIn | Email: ayahossne41@gmail.com

@@ -81,7 +81,10 @@ Each script in this directory demonstrates:
 
 These tools are intentionally **small, readable, and realistic**, similar to scripts used internally by SOC teams.
 
+
 ---
+
+
 
 [⬅ Back to Main Portfolio](../README.md)
 

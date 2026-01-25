@@ -1,24 +1,75 @@
-# Security Analysis & Lab Write-ups 
+# 🛡️ Security Analysis & Lab Write-ups
 
-This directory serves as a technical library for my cybersecurity investigations, documenting my methodology across various platforms.
-
-##  Content Overview
-**Advent of Cyber (2023 & 2025):** Detailed analysis and solutions for daily security challenges, focusing on core fundamentals (2023) and advanced threat scenarios (2025).
-**TryHackMe Challenges:** Technical walkthroughs for various rooms, covering SOC and Blue Team paths.
-**Specialized Labs:** In-depth investigation reports for incident response and forensics.
-
-##  My Analysis Methodology
-1. **Objective:** Defining the scope and the goal of the investigation.
-2. **Tool Selection:** Utilizing industry-standard tools (e.g., Wireshark, Splunk, Volatility).
-3. **Technical Breakdown:** Step-by-step investigation and evidence collection.
-4. **Conclusion:** Summarizing findings and defensive recommendations.
-
-##  Active Write-ups
-
-* [SOC Alert Triaging with Microsoft Sentinel](./SOC-Alert-Triaging-with-Microsoft-Sentinel.md)
-* [Windows Registry Forensics Analysis](./Registry-Forensics-Compromised-Windows-Asset.md)
-* [Advent of Cyber 2023 - Technical Highlights](./AOC_2023_Highlights.md)
-* [Log Analysis & Incident Response Lab](./Log_Analysis_Lab.md)
+This directory serves as a technical library documenting my hands-on cybersecurity investigations.  
+It reflects my end-to-end methodology in **threat detection, digital forensics, and incident response**
+across SOC and Blue Team environments.
 
 ---
-*Back to [Main Portfolio](../README.md)*
+
+## 📑 Content Overview
+
+- **SOC & SIEM Operations:**  
+  Real-world alert triaging and investigation using **Microsoft Sentinel** and **Splunk**.
+
+- **Digital Forensics:**  
+  Host-based forensic analysis focusing on Windows Registry artifacts and persistence mechanisms.
+
+- **Network Analysis:**  
+  Investigation of malicious traffic, C2 beaconing, and PCAP-based threat detection.
+
+- **Advent of Cyber (2025):**  
+  Advanced labs simulating modern attack techniques and defensive analysis.
+
+---
+
+## 🛠️ My Analysis Methodology
+
+All investigations follow a structured approach aligned with the  
+**NIST Incident Response Framework**:
+
+1. **Preparation & Scope**  
+   Defining investigation boundaries, assets, and attack surface.
+
+2. **Evidence Collection**  
+   Collecting network, host, and SIEM logs using industry tools  
+   (Wireshark, Splunk, Microsoft Sentinel, Registry Explorer).
+
+3. **Technical Correlation**  
+   Correlating logs and artifacts to reconstruct the full attack timeline.
+
+4. **Remediation & Mapping**  
+   Providing actionable mitigation steps and mapping findings to **MITRE ATT&CK**.
+
+---
+
+## 🚀 Featured Write-ups
+
+### 🔍 Threat Detection & SIEM
+
+- **[SOC Alert Triaging: Linux PrivEsc with Microsoft Sentinel](./SOC-Alert-Triaging-with-Microsoft-Sentinel.md)**  
+  *Focus: KQL, Kernel Modules, Sudoers Modification*
+
+- **[Web Attack Forensics: Command Injection via Splunk](./Web-Attack-Forensics-Splunk.md)**  
+  *Focus: SPL, Apache Logs, Sysmon Correlation, RCE Detection*
+
+---
+
+### 📂 Digital Forensics
+
+- **[Windows Registry Forensics: Persistence Detection](./Registry-Forensics-Compromised-Windows-Asset.md)**  
+  *Focus: Hive Analysis, UserAssist, Run Keys, Registry Explorer*
+
+---
+
+### 🌐 Network & Advanced Labs
+
+- **[C2 Detection: PCAP & Traffic Analysis (Command & Carol)](./C2-Detection-Command-Carol.md)**  
+  *Focus: Wireshark, Beaconing Detection, C2 Infrastructure*
+
+- **[Log Analysis & Incident Response Lab](./Log_Analysis_Lab.md)**
+
+---
+
+⬅️ Back to **[Main Portfolio](../README.md)**
+
+---

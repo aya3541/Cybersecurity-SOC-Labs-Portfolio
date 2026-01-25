@@ -66,8 +66,6 @@ All investigations follow a structured approach aligned with the
 - **[C2 Detection: PCAP & Traffic Analysis (Command & Carol)](./C2-Detection-Command-Carol.md)**  
   *Focus: Wireshark, Beaconing Detection, C2 Infrastructure*
 
-- **[Log Analysis & Incident Response Lab](./Log_Analysis_Lab.md)**
-
 ---
 
 ⬅️ Back to **[Main Portfolio](../README.md)**

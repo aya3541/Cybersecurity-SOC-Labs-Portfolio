@@ -3,9 +3,9 @@
 This directory serves as a technical library for my cybersecurity investigations, documenting my methodology across various platforms.
 
 ##  Content Overview
-* **Advent of Cyber (2024 & 2026):** In-depth analysis of daily security challenges, focusing on the latest 2026 threat landscapes.
-* **TryHackMe Challenges:** Technical solutions for various rooms, covering SOC and Blue Team paths.
-* **Specialized Labs:** Technical walkthroughs for incident response and forensics.
+**Advent of Cyber (2023 & 2025):** Detailed analysis and solutions for daily security challenges, focusing on core fundamentals (2023) and advanced threat scenarios (2025).
+**TryHackMe Challenges:** Technical walkthroughs for various rooms, covering SOC and Blue Team paths.
+**Specialized Labs:** In-depth investigation reports for incident response and forensics.
 
 ##  My Analysis Methodology
 1. **Objective:** Defining the scope and the goal of the investigation.
@@ -14,8 +14,8 @@ This directory serves as a technical library for my cybersecurity investigations
 4. **Conclusion:** Summarizing findings and defensive recommendations.
 
 ##  Active Write-ups
-* [Advent of Cyber 2026 - Technical Collection](./AOC_2026_Collection.md)
-* [Advent of Cyber 2024 - Highlights](./AOC_2024_Highlights.md)
+* [Advent of Cyber 2025 - Full Analysis](./AOC_2025_Analysis.md)
+* [Advent of Cyber 2023 - Technical Highlights](./AOC_2023_Highlights.md)
 * [Log Analysis & Incident Response Lab](./Log_Analysis_Lab.md)
 
 ---

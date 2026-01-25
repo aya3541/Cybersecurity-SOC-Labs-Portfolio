@@ -14,7 +14,9 @@ This directory serves as a technical library for my cybersecurity investigations
 4. **Conclusion:** Summarizing findings and defensive recommendations.
 
 ##  Active Write-ups
-* [Advent of Cyber 2025 - Full Analysis](./AOC_2025_Analysis.md)
+
+* [SOC Alert Triaging with Microsoft Sentinel](./SOC-Alert-Triaging-with-Microsoft-Sentinel.md)
+* [Windows Registry Forensics Analysis](./Registry-Forensics-Compromised-Windows-Asset.md)
 * [Advent of Cyber 2023 - Technical Highlights](./AOC_2023_Highlights.md)
 * [Log Analysis & Incident Response Lab](./Log_Analysis_Lab.md)
 

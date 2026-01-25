@@ -129,4 +129,5 @@ index=windows_sysmon *cmd.exe* *whoami*
 
 ---
 
-[Back to Main Writeups](https://www.google.com/search?q=../Writeups/README.md)
+[Back to Main Portfolio](../README.md)
+

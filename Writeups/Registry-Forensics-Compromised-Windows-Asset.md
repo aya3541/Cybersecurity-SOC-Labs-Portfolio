@@ -102,4 +102,5 @@ Before concluding, a review confirmed this was not a false positive:
 
 ---
 
-[Back to Main Writeups](https://www.google.com/search?q=../Writeups/README.md)
+[⬅️ Back to Writeups](./README.md)
+

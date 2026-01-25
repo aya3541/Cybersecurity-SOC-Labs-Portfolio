@@ -1,4 +1,4 @@
-###Case Study: Investigating Linux Privilege Escalation via Microsoft Sentinel
+### Case Study: Investigating Linux Privilege Escalation via Microsoft Sentinel
 
 # 1. Executive Summary
 This report details the systematic investigation of high-severity incidents detected within the Azure environment of 'The Best Festival Company'. The investigation focused on identifying a series of malicious activities mapped to the Privilege Escalation tactic, 
@@ -22,7 +22,7 @@ To demonstrate the progression of the breach, the following timeline was reconst
 
 10:09 UTC: Deployment and insertion of malicious kernel module (malicious_mod.ko).
 
-4. Technical Investigation & Log Analysis
+# 4. Technical Investigation & Log Analysis
 Phase 1: Evidence Collection via KQL
 A deep-dive analysis was conducted using KQL on the Syslog_CL table to validate the suspicious activity on app-02.
 

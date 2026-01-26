@@ -36,7 +36,7 @@ def analyze_logs(file_path, threshold=50):
         current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         print("=" * 50)
-        print(f"🛡️  SOC LOG ANALYSIS REPORT")
+        print(f"  SOC LOG ANALYSIS REPORT")
         print(f"Generated on: {current_time}")
         print("=" * 50)
         print(f"Total Requests Analyzed : {len(found_ips)}")
@@ -44,7 +44,7 @@ def analyze_logs(file_path, threshold=50):
         print(f"Alert Threshold         : {threshold}+ requests")
         print("-" * 50)
 
-        print("🚨 High-Frequency IPs (Potentially Suspicious):")
+        print(" High-Frequency IPs (Potentially Suspicious):")
 
         suspicious_found = False
         # Sorting by most common for better visibility
@@ -54,7 +54,7 @@ def analyze_logs(file_path, threshold=50):
                 suspicious_found = True
 
         if not suspicious_found:
-            print("✅ No IP addresses exceeded the defined threshold.")
+            print(" No IP addresses exceeded the defined threshold.")
 
         print("=" * 50)
 

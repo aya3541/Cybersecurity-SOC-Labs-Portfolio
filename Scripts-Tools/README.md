@@ -12,81 +12,81 @@ The goal of these tools is to reduce manual effort, speed up investigations, and
 **Log-Intel-Analyzer** is a lightweight Python utility built for SOC analysts to quickly parse and analyze web server access logs (Apache / Nginx).
 
 ### 🔍 Key Features
-- **Automated IP Extraction:** Uses Regular Expressions (Regex) to extract all IPv4 addresses from raw log files.
-- **Frequency Analysis:** Identifies top-talking IP addresses using statistical counting.
-- **Threat Detection Support:** Helps detect potential:
-  - Brute Force attempts  
-  - DDoS activity  
-  - Automated directory or endpoint scanning
-- **SOC Efficiency:** Reduces initial log triage time from minutes to seconds.
+- **Professional IP Extraction:** Uses advanced Regular Expressions (Regex) to accurately identify valid IPv4 addresses.
+- **Frequency Analysis:** Automatically counts and sorts IP activity.
+- **Alert Thresholding:** Focuses only on high-volume IPs (default: 50+ requests) to reduce noise.
+- **Incident Documentation:** Generates time-stamped reports suitable for SOC case notes and forensic records.
 
 ### 🛠️ Technical Details
 - **Language:** Python 3.x
-- **Libraries Used:** `re`, `collections`
+- **Libraries Used:** `re`, `collections`, `datetime`
 - **Input:** `.log` or `.txt` web access log files
 
 ### 📖 How to Use
 1. Ensure Python 3 is installed.
 2. Place your log file (e.g., `access.log`) in the same directory as the script.
 3. Run the script:
-   ```bash
-   python3 Log-Intel-Analyzer.py
+```bash
+python3 log_intel_analyzer.py
 ````
 
 ### 📤 Example Output
 
 ```text
-Top Suspicious IPs:
-192.168.1.45  ->  154 requests
-10.10.10.23   ->  97 requests
-45.33.21.10   ->  82 requests
+==================================================
+🛡️  SOC LOG ANALYSIS REPORT
+Generated on: 2024-05-20 14:30:15
+==================================================
+Total Requests Analyzed : 1240
+Unique IPs Detected     : 45
+Alert Threshold         : 50+ requests
+--------------------------------------------------
+🚨 High-Frequency IPs (Potentially Suspicious):
+IP: 192.168.1.45    | Requests: 154
+IP: 45.33.21.10     | Requests: 82
+==================================================
 ```
-````
+
 ---
 
 ## 🧩 Additional SOC Automation Scripts (Planned & In Progress)
 
-These tools are designed to reflect **real SOC analyst tasks** and defensive security workflows.
+These tools reflect **real SOC analyst responsibilities** and defensive security workflows.
 
 * [ ] **Hash-Verify-VT.py**
-  *Automates file hash reputation checks using VirusTotal API.*
-  **Focus:** Malware triage, threat intelligence enrichment.
+  *Focus: Malware triage, file reputation analysis, threat intelligence enrichment.*
 
 * [ ] **Suspicious-IP-Enricher.py**
-  *Enriches IP addresses with GeoIP, ASN, and threat reputation data.*
-  **Focus:** Incident context, threat hunting.
+  *Focus: IP reputation checks, GeoIP & ASN enrichment, incident context.*
 
 * [ ] **Windows-Event-Log-Hunter.py**
-  *Parses Windows Event Logs to detect suspicious login patterns and privilege escalation attempts.*
-  **Focus:** Blue Team, Windows security monitoring.
+  *Focus: Windows Security Events, suspicious logins, privilege escalation detection.*
 
 * [ ] **SSH-Bruteforce-Detector.py**
-  *Detects repeated failed SSH login attempts from auth.log files.*
-  **Focus:** Linux security, brute-force detection.
+  *Focus: Linux auth.log analysis, brute-force detection.*
 
 * [ ] **Mini-SIEM-Parser.py**
-  *Correlates logs from multiple sources (web + auth logs) to simulate basic SIEM logic.*
-  **Focus:** Log correlation, SOC fundamentals.
+  *Focus: Log correlation, SOC fundamentals, multi-source detection logic.*
 
 ---
 
 ## 🎯 Why These Scripts Matter
 
-Each script in this directory demonstrates:
+Each script demonstrates:
 
-* Practical SOC analyst thinking
-* Automation mindset
-* Understanding of real attack patterns
-* Blue Team & defensive security focus
+* Practical **SOC analyst thinking**
+* An **automation-first mindset**
+* Understanding of real-world attack patterns (Brute Force, DDoS, Recon)
+* Strong **Blue Team & defensive security focus**
 
-These tools are intentionally **small, readable, and realistic**, similar to scripts used internally by SOC teams.
-
+These tools are intentionally **small, readable, and realistic**, similar to scripts used internally by SOC teams for daily investigations.
 
 ---
 
+[⬅️ Back to Main Portfolio](../README.md)
 
+```
 
-[⬅ Back to Main Portfolio](../README.md)
 
 
 

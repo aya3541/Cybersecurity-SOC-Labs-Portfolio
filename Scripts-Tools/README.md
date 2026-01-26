@@ -85,9 +85,3 @@ These tools are intentionally **small, readable, and realistic**, similar to scr
 
 [⬅️ Back to Main Portfolio](../README.md)
 
-```
-
-
-
-
-

@@ -1,91 +1,97 @@
 
 # 🔐 Hash-Verify-VT (VirusTotal Automation)
 
-**Hash-Verify-VT** is a Python-based SOC utility that automates file hash reputation checks using the VirusTotal API.
+**Hash-Verify-VT** is a Python-based SOC utility designed to automate **file hash reputation analysis** using the VirusTotal API.
 
-This script helps analysts quickly determine whether a file hash is associated with known malware, significantly reducing manual lookup time during incident response and threat triage.
+The project is built with a **versioned approach**, demonstrating progressive development from basic malware triage to more advanced SOC automation capabilities.
 
 ---
 
 ## 🎯 SOC Use Case
 
-During malware investigations, SOC analysts often receive:
-- **File hashes** from EDR or XDR alerts
-- **Suspicious attachments** extracted from phishing emails
-- **Indicators of Compromise (IOCs)** from SIEM platforms or threat intelligence feeds
+During incident response and threat hunting, SOC analysts frequently work with:
+- File hashes from EDR / XDR alerts
+- Suspicious attachments from phishing campaigns
+- Indicators of Compromise (IOCs) from SIEM platforms and threat intelligence feeds
 
-This tool automates the **first-stage malware triage** process and supports faster decision-making.
-
----
-
-## 🔍 Key Features
-- **Multi-Format Hash Support:** MD5, SHA1, and SHA256
-- **Automated Reputation Lookup:** Queries the VirusTotal API directly
-- **Threat Intelligence Extraction:** Retrieves malicious, suspicious, and undetected detection counts
-- **SOC-Friendly Output:** Clean and readable output suitable for incident documentation
+Hash-Verify-VT automates the **first-stage malware triage**, significantly reducing manual lookup time and improving analyst efficiency.
 
 ---
 
-## 🛠️ Technical Details
+## 📦 Project Structure & Versions
+
+### 🧪 Version 1.0 — Core Hash Triage
+📁 `v1.0/`
+
+A lightweight script focused on **single-hash analysis**.
+
+**Key Capabilities:**
+- Supports MD5, SHA1, and SHA256 hashes
+- Queries VirusTotal Public API
+- Extracts malicious, suspicious, and undetected counts
+- Clear verdict output for fast decision-making
+
+📄 Documentation:  
+➡️ `v1.0/README.md`
+
+---
+
+### 🚀 Version 2.0 — Enhanced SOC Automation
+📁 `v2.0/`
+
+An improved version designed to reflect **real SOC workflows** and analyst needs.
+
+**Key Enhancements:**
+- Batch hash scanning from input files
+- CSV / JSON report generation
+- Improved output formatting for case documentation
+- Basic handling of VirusTotal API rate limits
+- More structured and extensible codebase
+
+📄 Documentation:  
+➡️ `v2.0/README.md`
+
+---
+
+## 🛠️ Technical Stack
+
 - **Language:** Python 3.x
-- **Libraries Used:** `requests`, `json`, `sys`
+- **Core Libraries:** `requests`, `json`, `sys`
 - **External Service:** VirusTotal Public API
-- **Input:** Single file hash (passed as a CLI argument)
-
----
-
-## 📖 How to Use
-
-1. Obtain a **VirusTotal API key**.
-2. Insert your API key into the script:
-```python
-API_KEY = "YOUR_API_KEY_HERE"
-````
-
-3. Run the script from the terminal:
-
-```bash
-python3 hash_verify_vt.py <file_hash>
-```
-
----
-
-## 📤 Example Output
-
-```text
-========================================
-🔍 VirusTotal Hash Analysis Result
-========================================
-Hash Type        : SHA256
-Malicious        : 12
-Suspicious       : 3
-Undetected       : 55
-Total Engines    : 70
-----------------------------------------
-🚨 Verdict: MALICIOUS
-========================================
-```
+- **Platform:** SOC / Blue Team automation
 
 ---
 
 ## 🧠 SOC Analyst Notes
 
-> **Note:** This script is intended for **initial triage only**, not final verdicts.
+> This tool is designed for **initial malware triage**, not final verdicts.
 > Results should always be correlated with:
->
-> * Endpoint behavior (EDR telemetry)
-> * Network activity (PCAPs, NetFlow)
-> * Sandbox or dynamic analysis results
+> - Endpoint behavior (EDR telemetry)
+> - Network traffic (PCAP, NetFlow)
+> - Sandbox or dynamic malware analysis
 
 ---
 
-## 🚧 Planned Enhancements
+## 🧩 Why This Project Matters
 
-* [ ] Batch hash scanning from input files
-* [ ] CSV / JSON report export
-* [ ] Public API rate-limit handling
-* [ ] Threat score calculation
+This project demonstrates:
+- SOC analyst mindset
+- Automation-first approach
+- Understanding of malware triage workflows
+- Progressive skill development through versioning
+- Clean documentation and maintainable structure
 
 ---
+
+## 🔄 Future Roadmap
+
+- Threat scoring and confidence calculation
+- SIEM integration (Sentinel / Splunk)
+- IOC enrichment (GeoIP, ASN, reputation feeds)
+- Automated alert generation
+
+---
+
+
 [⬅️ Back to Scripts & Tools](../README.md)
 

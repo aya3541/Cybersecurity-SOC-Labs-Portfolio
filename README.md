@@ -17,11 +17,15 @@ Security Engineering: Developing Python & Bash scripts for security auditing and
 
 # Repository Structure
 
+* **Network-Analysis-Cases/ 🔍 (New):** In-depth investigation reports on real-world threats. 
+    * [Case 01: Lumma Stealer Data Exfiltration Analysis](./Network-Analysis-Cases/Case01-Lumma-Stealer/) — *Using Zeek to identify C2 and data theft.*
+
 Writeups/: Comprehensive walkthroughs for 100+ TryHackMe rooms, including Advent of Cyber (2024-2026) and Blue Team paths.
 
 Forensics/: In-depth analysis reports on memory and network forensics from Mahara-Tech labs.
 
 Scripts/: Custom Bash & Python tools for system auditing and incident response.
+
 
 # Tech Stack
 

@@ -17,8 +17,7 @@ Security Engineering: Developing Python & Bash scripts for security auditing and
 
 # Repository Structure
 
-* **Network-Analysis-Cases/ 🔍 (New):** In-depth investigation reports on real-world threats. 
-    * [Case 01: Lumma Stealer Data Exfiltration Analysis](./Network-Analysis-Cases/Case01-Lumma-Stealer/) — *Using Zeek to identify C2 and data theft.*
+DFIR-Investigation-Logbook/: Comprehensive technical reports and forensic artifacts for real-world threat investigations (e.g., Lumma Stealer Analysis).
 
 Writeups/: Comprehensive walkthroughs for 100+ TryHackMe rooms, including Advent of Cyber (2024-2026) and Blue Team paths.
 

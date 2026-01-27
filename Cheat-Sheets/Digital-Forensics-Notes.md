@@ -71,4 +71,4 @@ Key registry locations used to identify user activity and persistence mechanisms
 
 ---
 
-[⬅️ Back to Main Portfolio](../../README.md)
+[⬅️ Back to Main Portfolio](../README.md)

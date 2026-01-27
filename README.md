@@ -21,7 +21,7 @@ DFIR-Investigation-Logbook/: Comprehensive technical reports and forensic artifa
 
 Writeups/: Comprehensive walkthroughs for 100+ TryHackMe rooms, including Advent of Cyber (2024-2026) and Blue Team paths.
 
-Forensics/: In-depth analysis reports on memory and network forensics from Mahara-Tech labs.
+Cheat-Sheets/: Quick reference guides for Digital Forensics, Incident Response, and SOC operations.
 
 Scripts/: Custom Bash & Python tools for system auditing and incident response.
 

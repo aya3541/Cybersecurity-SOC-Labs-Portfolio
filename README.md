@@ -50,6 +50,14 @@ Junior Cybersecurity Analyst – Cisco Networking Academy (2025).
 
 Microsoft Summer Camp 2025 – Cybersecurity Track.
 
+##  Updates & Roadmap
+
+This repository is actively maintained and continuously updated with:
+- New network threat investigation cases
+- Additional SOC detection labs
+- Advanced digital forensics reports
+- Custom automation scripts
+
 
 # Connect with me: 
 

@@ -44,11 +44,31 @@ The final stage of analysis confirmed the impact of the attack. Inspection of HT
 
 ![Exfiltration Evidence](./Screenshots/04-data-exfiltration.png)
 
-> **Deep Packet Inspection (DPI):** The captured **HTTP POST** requests to the `/api/set_agent` endpoint provide definitive proof of data theft. The URI parameters indicate the exfiltration of credentials and session tokens from **Google Chrome** and **Microsoft Edge**. Unique victim IDs and authentication tokens were observed being transmitted to the adversary.
+> **Deep Packet Inspection (DPI):** The captured **HTTP POST** requests to the `/api/set_agent` endpoint provide definitive proof of data theft. The URI parameters indicate the exfiltration of credentials and session tokens from **Google Chrome** and **Microsoft Edge**.
 
 ---
 
-## **6. Conclusion & Mitigation**
+## **6. Phase V: MITRE ATT&CK Mapping & Investigative Logic**
+To contextualize the technical findings, I mapped the observed **Lumma Stealer** behaviors to the MITRE ATT&CK framework. This ensures the investigation follows a globally recognized methodology.
+
+### **Part A: Credential Theft & C2 Communication**
+In this stage, the focus was on how the malware handles the stolen data and communicates with its controller.
+
+![Lumma Mapping - Part 1](./Screenshots/lumma-mapping-1.png)
+
+* **Technique: [Credentials from Web Browsers (T1555.003)](https://attack.mitre.org/techniques/T1555/003/):** The analysis confirmed that the malware specifically targeted local database files to extract saved credentials and cookies.
+* **Technique: [Application Layer Protocol (T1071.001)](https://attack.mitre.org/techniques/T1071/001/):** The use of HTTP POST requests for exfiltration was mapped to this technique, highlighting the use of standard web protocols to blend in with legitimate traffic.
+
+### **Part B: System Discovery & Environment Reconnaissance**
+Before the exfiltration phase, the malware was observed gathering intelligence about the host environment.
+
+![Lumma Mapping - Part 2](./Screenshots/lumma-mapping-2.png)
+
+* **Technique: [System Information Discovery (T1082)](https://attack.mitre.org/techniques/T1082/):** The logs indicated queries for hardware specifications and OS details, used by the malware to fingerprint the victim's machine.
+
+---
+
+## **7. Conclusion & Mitigation**
 The analysis confirms a successful deployment of Lumma Stealer with high-impact data exfiltration. 
 
 ### **Recommendations:**
@@ -57,15 +77,3 @@ The analysis confirms a successful deployment of Lumma Stealer with high-impact 
 3.  **Credential Reset:** Force a password reset for all browser-synced accounts (Google/Microsoft) associated with the victim machine.
 
 ---
-## 🛡️ MITRE ATT&CK Mapping & Analysis
-
-To better understand the behavior of **Lumma Stealer**, I mapped the observed activities during the technical investigation to the MITRE ATT&CK Framework.
-
-### Phase 1: Access & Communication
-![Lumma Mapping - Part 1](./lumma-map1.jpg)
-* **Credential Access:** Identified the malware's ability to extract sensitive data from **Web Browsers** (T1555.003).
-* **Command and Control:** Observed the use of standard **Web Protocols** (HTTP) for C2 communication and data exfiltration.
-
-### Phase 2: Reconnaissance & Discovery
-![Lumma Mapping - Part 2](./lumma-map2.png)
-* **Discovery:** The malware performed **System Information Discovery** (T1082) to gather victim machine specifications, which is a common step before executing further malicious payloads.

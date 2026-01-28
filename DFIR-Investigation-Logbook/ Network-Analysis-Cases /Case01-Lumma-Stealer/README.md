@@ -55,3 +55,17 @@ The analysis confirms a successful deployment of Lumma Stealer with high-impact 
 1.  **Host Isolation:** Isolate `10.1.14.101` from the production network.
 2.  **Network Blocking:** Blacklist IP `174.138.43.121` and block all `.cyou` TLD traffic at the firewall level.
 3.  **Credential Reset:** Force a password reset for all browser-synced accounts (Google/Microsoft) associated with the victim machine.
+
+---
+## 🛡️ MITRE ATT&CK Mapping & Analysis
+
+To better understand the behavior of **Lumma Stealer**, I mapped the observed activities during the technical investigation to the MITRE ATT&CK Framework.
+
+### Phase 1: Access & Communication
+![Lumma Mapping - Part 1](./lumma-map1.jpg)
+* **Credential Access:** Identified the malware's ability to extract sensitive data from **Web Browsers** (T1555.003).
+* **Command and Control:** Observed the use of standard **Web Protocols** (HTTP) for C2 communication and data exfiltration.
+
+### Phase 2: Reconnaissance & Discovery
+![Lumma Mapping - Part 2](./lumma-map2.png)
+* **Discovery:** The malware performed **System Information Discovery** (T1082) to gather victim machine specifications, which is a common step before executing further malicious payloads.

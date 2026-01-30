@@ -44,13 +44,10 @@ To confirm successful RCE, a high-fidelity query was used to identify if the web
 index=windows_sysmon EventCode=1 ParentImage="*httpd.exe*" Image="*cmd.exe*"
 
 ```
-
-### 3.5. Host-Level Correlation (Process Creation)
-To confirm RCE, Sysmon logs were queried for instances where the web server process (`httpd.exe`) spawned a system shell (`cmd.exe`).
 ![Sysmon Process Creation](Screenshots/sysmon_correlation.png)
 *Figure 4: Definitive evidence of httpd.exe spawning cmd.exe (EventID 1).*
 
-### 3.6. Post-Exploitation Reconnaissance
+### 3.5. Post-Exploitation Reconnaissance
 The attacker was observed executing the `whoami` command to verify the user context after establishing a foothold.
 ![Post-Exploitation Recon](Screenshots/post_exploitation_recon.png)
 *Figure 5: Tracking the execution of reconnaissance commands via Sysmon.*

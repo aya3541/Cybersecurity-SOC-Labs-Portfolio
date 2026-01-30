@@ -23,22 +23,22 @@ This report documents a technical threat hunting investigation focused on identi
 
 ### Phase 1: PCAP to Zeek Conversion
 The raw PCAP was processed into structured Zeek logs to enable deep flow analysis.
-![Zeek Log Generation](zeek_conversion.png)
+![Zeek Log Generation](Screenshots/zeek_conversion.png)
 *Execution of Zeek to parse AsyncRAT.pcap and generate metadata logs.*
 
 ### Phase 2: Manual Log Inspection
 Before automated analysis, I performed a manual check on the HTTP logs to identify suspicious headers or unusual destination paths.
-![Manual Log Inspection](http_log_check.png)
+![Manual Log Inspection](Screenshots/http_log_check.png)
 *Inspecting the top entries of http.log to identify initial web-based indicators.*
 
 ### Phase 3: RITA Database Import
 Zeek logs were imported into the RITA database to calculate connection intervals and statistical frequency.
-![RITA Data Import](rita_import.png)
+![RITA Data Import](Screenshots/rita_import.png)
 *Importing generated Zeek logs into the 'asyncrat' database for analysis.*
 
 ### Phase 4: Beaconing & Threat Correlation
 Using RITA's statistical engine, I identified hosts showing repetitive connection patterns (Beacons).
-![Beaconing Analysis Results](beacon_analysis.png)
+![Beaconing Analysis Results](Screenshots/beacon_analysis.png)
 *Final analysis results showing Beaconing likelihood for host 10.3.14.101.*
 
 ---

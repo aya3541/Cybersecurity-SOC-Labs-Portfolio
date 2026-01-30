@@ -74,4 +74,5 @@ Using RITA's statistical engine, I identified hosts showing repetitive connectio
 3. **Threat Intel:** Feed identified IoCs back into the SIEM for future correlation.
 
 ---
-[⬅️ Back to Writeups](./README.md)
+[⬅️ Back to Writeups](../README.md)
+

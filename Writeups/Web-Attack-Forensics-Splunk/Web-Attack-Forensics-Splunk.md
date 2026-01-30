@@ -30,17 +30,25 @@ Analysis of `windows_apache_error` logs confirmed that the server attempted to p
 ![Apache Error Logs](Screenshots/apache_error_logs.png)
 *Figure 2: Correlating 404/500 errors and command recognition issues in error logs.*
 
-### 3.3. Searching for Encoded Commands (Sysmon)
-A specific query was executed in `windows_sysmon` to find any PowerShell instances running with encoded commands (`-enc`, `-EncodedCommand`, or `Base64`).
-![Encoded Command Search](Screenshots/encoded_command_search.png)
-*Figure 3: Hunting for obfuscated PowerShell execution in host-level logs.*
 
-### 3.4. Host-Level Correlation (Process Creation)
+### 3.3. Threat Hunting: Encoded PowerShell (Sysmon)
+A hunting query was executed in `windows_sysmon` to check if `powershell.exe` was invoked with encoded flags (`-enc` or `Base64`). This proactive step was taken to exclude other potential obfuscation methods.
+![Encoded Command Search](Screenshots/encoded_command_search.png)
+*Figure 3: Hunting attempt for obfuscated PowerShell execution in host-level logs.*
+
+### 3.4. Host-Level Correlation: The "Smoking Gun"
+To confirm successful RCE, a high-fidelity query was used to identify if the web server process (`httpd.exe`) spawned a system shell (`cmd.exe`). This is a definitive indicator of a successful Command Injection.
+
+**SPL Query Executed:**
+```spl
+index=windows_sysmon EventCode=1 ParentImage="*httpd.exe*" Image="*cmd.exe*"
+
+### 3.5. Host-Level Correlation (Process Creation)
 To confirm RCE, Sysmon logs were queried for instances where the web server process (`httpd.exe`) spawned a system shell (`cmd.exe`).
 ![Sysmon Process Creation](Screenshots/sysmon_correlation.png)
 *Figure 4: Definitive evidence of httpd.exe spawning cmd.exe (EventID 1).*
 
-### 3.5. Post-Exploitation Reconnaissance
+### 3.6. Post-Exploitation Reconnaissance
 The attacker was observed executing the `whoami` command to verify the user context after establishing a foothold.
 ![Post-Exploitation Recon](Screenshots/post_exploitation_recon.png)
 *Figure 5: Tracking the execution of reconnaissance commands via Sysmon.*

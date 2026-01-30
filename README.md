@@ -19,7 +19,7 @@ Security Engineering: Developing Python & Bash scripts for security auditing and
 
 DFIR-Investigation-Logbook/: Comprehensive technical reports and forensic artifacts for real-world threat investigations (e.g., Lumma Stealer Analysis).
 
-Writeups/: Comprehensive walkthroughs for 100+ TryHackMe rooms, including Advent of Cyber (2024-2026) and Blue Team paths.
+Writeups/: Comprehensive walkthroughs for 100+ TryHackMe rooms, including Advent of Cyber (2023-2025) and Blue Team paths.
 
 Cheat-Sheets/: Quick reference guides for Digital Forensics, Incident Response, and SOC operations.
 

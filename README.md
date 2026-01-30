@@ -1,68 +1,74 @@
+# 🛡️ Cybersecurity SOC & DFIR Portfolio 
 
-# Cybersecurity SOC & Forensics Portfolio 
+> **Professional Master’s in Software Engineering** > Dedicated to bridging the gap between Software Engineering fundamentals and practical Cyber Defense. Focused on SOC Operations, Malware Analysis, and Blue Team workflows.
 
-" Professional portfolio documenting hands-on experience in Security Operations (SOC), Digital Forensics, and Security Engineering. Bridging the gap between Software Engineering and Cyber Defense."
+---
 
-# Core Competencies
+## 🚀 Core Competencies
 
-SOC Operations: Log analysis, incident handling, and traffic monitoring using Splunk and Microsoft Sentinel.
+* **SOC Operations:** Log analysis, alert triage, and incident handling (Splunk, Microsoft Sentinel).
+* **Malware Analysis:** Analyzing malware behavior (e.g., Lumma Stealer) and extracting IOCs.
+* **Digital Forensics (DFIR):** Memory forensics, network artifacts, and file system investigation.
+* **Security Engineering:** Developing Python & Bash scripts for security auditing and automation.
+* **Enterprise Linux:** System administration following Red Hat (RHEL) standards.
 
-Digital Forensics: Memory forensics, network artifact analysis, and file system investigation (Mahara-Tech Advanced Path).
+---
 
-Linux Administration: Managing enterprise systems using Red Hat (RHEL) standards.
+# 📁 Repository Structure
 
-Network Security: Expertise in Wireless Penetration Testing and network traffic auditing.
+### 🔍 [DFIR-Investigation-Logbook/](./DFIR-Investigation-Logbook/)
+Technical reports and forensic artifacts for real-world threat investigations.
+* **Featured Reports:** Detailed forensic analysis for selected high-impact cases, including **Lumma Stealer Analysis** (C2 communications & MITRE ATT&CK mapping).
 
-Security Engineering: Developing Python & Bash scripts for security auditing and automation.
+### 📝 [Writeups/](./Writeups/)
+Documentation of my continuous learning journey on TryHackMe:
+* Successfully completed **numerous rooms** across SOC Level 1 and Blue Team learning paths.
+* Includes **detailed writeups for selected rooms** to document complex technical challenges and detection methodologies.
+* Active participant in **Advent of Cyber (2023–2025)**.
 
-# Repository Structure
+### 📜 [Cheat-Sheets/](./Cheat-Sheets/)
+Quick-reference guides and "Golden Rules" for:
+* SOC Operations and Alert Triage.
+* Digital Forensics and Incident Response (DFIR) workflows.
 
-DFIR-Investigation-Logbook/: Comprehensive technical reports and forensic artifacts for real-world threat investigations (e.g., Lumma Stealer Analysis).
+### 🛠️ [Scripts/](./Scripts/)
+Custom Python and Bash tools designed for:
+* Log parsing and automated system auditing.
+* Incident Response and monitoring automation.
 
-Writeups/: Comprehensive walkthroughs for 100+ TryHackMe rooms, including Advent of Cyber (2023-2025) and Blue Team paths.
+---
 
-Cheat-Sheets/: Quick reference guides for Digital Forensics, Incident Response, and SOC operations.
+## 🛠️ Tech Stack
 
-Scripts/: Custom Bash & Python tools for system auditing and incident response.
+* **Analysis Tools:** Wireshark, Zeek, Volatility, Autopsy, Nmap, Splunk.
+* **Operating Systems:** Red Hat Enterprise Linux (RHEL), Kali Linux, Ubuntu.
+* **Development:** Python (Security Automation), SQL, Java, Bash Scripting.
+* **Wireless Security:** Aircrack-ng Suite, Kismet.
 
+---
 
-# Tech Stack
+## 🎓 Key Qualifications & Training
 
-Analysis: Wireshark, Volatility, Autopsy, Nmap, Splunk.
+* **Professional Master’s in Software Engineering** | Cairo University (2024).
+* **Digital Forensics Specialist (Advanced Path)** | Mahara-Tech.
+* **Linux System Administration (SA01 & SA02)** | Red Hat / Mahara-Tech — **[In Progress]**.
+* **Junior Cybersecurity Analyst** | Cisco Networking Academy (2025).
+* **Microsoft Summer Camp 2025** | Cybersecurity Track.
 
-Linux/Admin: Red Hat Enterprise Linux, Kali Linux, Bash Scripting.
+---
 
-Wireless: Aircrack-ng Suite, Kismet (Technical Security Path).
+## 📈 Roadmap & Continuous Learning
+- [ ] Enhancing expertise in **Cloud Security Operations**.
+- [ ] Deepening knowledge in **Advanced Threat Hunting**.
+- [ ] Developing custom **Automated Detection Rules** for SIEM.
 
-Development: Python, SQL, Java.
+---
 
-# Key Qualifications
+## 📫 Connect with me:
 
-Professional Master’s in Software Engineering – Cairo University (2024) .
+* **LinkedIn:** [linkedin.com/in/aya-hossny](https://www.linkedin.com/in/aya-hossny)
+* **Email:** ayahossne41@gmail.com
+* **GitHub:** [github.com/ayahossny](https://github.com/ayahossny)
 
-Linux System Administration – Red Hat (SA01 & SA02), Mahara-Tech.
-
-Digital Forensics Specialist – Advanced Path, Mahara-Tech.
-
-Wireless Penetration Testing – Technical Security Path, Mahara-Tech.
-
-Junior Cybersecurity Analyst – Cisco Networking Academy (2025).
-
-Microsoft Summer Camp 2025 – Cybersecurity Track.
-
-##  Updates & Roadmap
-
-This repository is actively maintained and continuously updated with:
-- New network threat investigation cases
-- Additional SOC detection labs
-- Advanced digital forensics reports
-- Custom automation scripts
-
-
-# Connect with me: 
-
-LinkedIn : www.linkedin.com/in/aya-hossny
-
-Email: ayahossne41@gmail.com
-
-
+---
+*This portfolio represents practical learning, continuous improvement, and a real-world security mindset.*

@@ -18,33 +18,45 @@ Registry hives were loaded from `C:\Users\Administrator\Desktop\Registry Hives\`
 ![Registry Hives Loading](Screenshots/registry_hives_loading.png)
 *Loading and replaying transaction logs for the SYSTEM, SOFTWARE, and NTUSER hives.*
 
+
 ---
 
-## 3. Technical Findings
+## 3. Attack Timeline (Reconstructed)
+By analyzing the **Last Write Time** and **UserAssist** timestamps, the following timeline was established:
 
-### 3.1. System Hostname Verification
+| Time (UTC) | Action | Evidence Source |
+| :--- | :--- | :--- |
+| **09:15:22** | Execution of suspicious binary from Downloads folder. | `NTUSER.DAT` (UserAssist) |
+| **09:35:10** | **Persistence Established:** `drone_helper` added to Run key. | `SOFTWARE` (Run Key) |
+| **09:40:00** | Post-exploitation activity and C2 communication start. | System Correlation |
+
+---
+
+## 4. Technical Findings
+
+### 4.1. System Hostname Verification
 The system hostname was verified within the `SYSTEM` hive to confirm the identity of the asset under investigation.
 ![Hostname Verification](Screenshots/hostname_verification.png)
 *Registry Path: ROOT\ControlSet001\Control\ComputerName\ComputerName showing DISPATCH-SRV01.*
 
-### 3.2. Software Installation Analysis
+### 4.2. Software Installation Analysis
 Examination of the `Uninstall` key revealed recent software installations. 
 ![Software Installation Check](Screenshots/software_inventory.png)
 *Registry Path: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall.*
 
-### 3.3. Execution Analysis (UserAssist)
+### 4.3. Execution Analysis (UserAssist)
 Analysis of the `UserAssist` key in the `NTUSER.DAT` hive confirmed the execution of several binaries, including those located in suspicious directories.
 ![UserAssist Execution Tracking](Screenshots/userassist_analysis.png)
 *Tracking GUI-based execution of binaries on the compromised host.*
 
-### 3.4. Persistence Mechanism (Run Key)
+### 4.4. Persistence Mechanism (Run Key)
 A critical persistence artifact was identified in the `SOFTWARE` hive. An unauthorized entry was added to the `Run` key to ensure the malicious process starts automatically.
 ![Persistence Mechanism Detection](Screenshots/registry_persistence.png)
 *Registry Path: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run showing the 'drone_helper' persistence value.*
 
 ---
 
-## 4. Analysis & Impact
+## 5. Analysis & Impact
 * **Attack Vector:** The presence of binaries in user-writable directories suggests a direct download or social engineering vector.
 * **Persistence:** The use of the `Run` key provides the attacker with reliable persistence upon user login.
 * **CIA Impact:** * **Integrity:** Modified system configuration to facilitate malicious activity.
@@ -52,7 +64,7 @@ A critical persistence artifact was identified in the `SOFTWARE` hive. An unauth
 
 ---
 
-## 5. Recommendations & Remediation
+## 6. Recommendations & Remediation
 
 ### Immediate Response
 1. **Persistence Removal:** Delete the unauthorized `drone_helper` registry entry and its associated binary.

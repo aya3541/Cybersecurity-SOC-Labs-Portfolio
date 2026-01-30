@@ -42,7 +42,6 @@ To confirm successful RCE, a high-fidelity query was used to identify if the web
 **SPL Query Executed:**
 ```spl
 index=windows_sysmon EventCode=1 ParentImage="*httpd.exe*" Image="*cmd.exe*"
-
 ```
 ![Sysmon Process Creation](Screenshots/sysmon_correlation.png)
 *Figure 4: Definitive evidence of httpd.exe spawning cmd.exe (EventID 1).*

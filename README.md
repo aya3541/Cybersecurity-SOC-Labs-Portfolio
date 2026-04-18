@@ -19,6 +19,11 @@
 ### 🔍 [DFIR-Investigation-Logbook/](./DFIR-Investigation-Logbook/)
 Technical reports and forensic artifacts for real-world threat investigations.
 * **Featured Reports:** Detailed forensic analysis for selected high-impact cases, including **Lumma Stealer Analysis** (C2 communications & MITRE ATT&CK mapping).
+* 
+### 🔍 [Vulnerability-Assessment-Red-Teaming-Labs/](./Vulnerability-Assessment-Red-Teaming-Labs/)
+Offensive security projects and penetration testing labs focusing on web application security.
+* **Featured Lab:** Comprehensive Security Audit of **DVWA** using **OWASP ZAP**.
+* **Key Skills:** Automated/Passive Scanning, Manual Fuzzing, **Passive Scan Rules Optimization**, and detailed technical reporting.
 
 ### 📝 [Writeups/](./Writeups/)
 Documentation of my continuous learning journey on TryHackMe:
